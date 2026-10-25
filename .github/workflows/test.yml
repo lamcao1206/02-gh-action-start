@@ -1,0 +1,21 @@
+name: Test Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubunti-latest
+    steps:
+    - name: Checkout src code
+      uses: actions/checkout@v3
+    - name: Install NodeJS
+      uses: actions/setip-node@v3
+      with:
+        node-version: 18
+    - name: Install dependency
+      run: npm ci
+    - name: Run tests
+      run: npm test
+
+
+
+
+
